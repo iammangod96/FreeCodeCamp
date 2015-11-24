@@ -208,19 +208,39 @@
       "id": "56533eb9ac21ba0edf2244ab",
       "title": "Understanding Case Sensitivity in Variables",
       "description": [
-        "Case sensitive, add camelCase best practice"
+        "In Javascript all variables and function names are case sensitive.  This means that capitalization matters.",
+        "<code>MYVAR</code> is not the same as <code>MyVar</code> nor <code>myvar</code>.  It is possible to have mulitpe distinct variables with the same name but different capitalization. It is strongly reccomended that for sake of clarity you <em>do not</em> use this language feature.",
+        "<h4>Best Practice</h4><div class=\"bestpractice\">Variables in Javascript should use camelCase.  In camelCase, variables made of multiple words have the first word in all lowercase and the first letter of each subsequent word capitalized.",
+        "Examples:",
+        "<code>var someVariable;</code>",
+        "<code>var anotherVariableName;</code>",
+        "<code>car thisVariableNameIsTooLong;</code></div>",
+        "<h4>Instructions</h4>Correct the variable assignements so their names match their variable declarations above.\""
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(StUdLyCapVaR === 10, 'message: StUdLyCapVaR has the correct case');\nassert(properCamelCase === \"A String\", 'message: properCamelCase has the correct case');\nassert(TitleCaseOver === 9000, 'message: TitleCaseOver has the correct case');"
       ],
       "challengeSeed": [
+        "var StUdLyCapVaR;",
+        "var properCamelCase;",
+        "var TitleCaseOver;",
         "",
+        "// Only change code below this line",
         "",
+        "STUDLYCAPVAR = 10;",
+        "PRoperCAmelCAse = \"A String\";",
+        "tITLEcASEoVER = \"9000\";",
         ""
       ],
       "solutions": [
-        ""
+        "var StUdLyCapVaR;",
+        "var properCamelCase;",
+        "var TitleCase;",
+        "",
+        "StUdLyCapVaR = 10;",
+        "properCamelCase = \"A String\";",
+        "TitleCaseOver = \"9000\";"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -236,16 +256,17 @@
       "description": [
         "Let's try to add two numbers using JavaScript.",
         "JavaScript uses the <code>+</code> symbol for addition.",
-        "Change the <code>0</code> so that sum will equal <code>20</code>."
+        "<h4>Instructions</h4>Change the <code>0</code> so that sum will equal <code>20</code>."
       ],
       "tests": [
-        "assert((function(){if(sum === 20 && editor.getValue().match(/\\+/g).length >= 2){return true;}else{return false;}})(), 'message: Make the variable <code>sum</code> equal 20.');"
+        "assert(sum === 20, 'message: <code>sum</code> should equal <code>20</code>');",
+        "assert(/\\+/.test(editor.getValue()), 'message: Use the <code>+</code> operator');"
       ],
       "challengeSeed": [
         "var sum = 10 + 0;",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(z){return 'sum='+z;})(sum);"
       ],
       "type": "waypoint",
@@ -257,16 +278,18 @@
       "description": [
         "We can also subtract one number from another.",
         "JavaScript uses the <code>-</code> symbol for subtraction.",
-        "Change the <code>0</code> so that difference will equal <code>12</code>."
+        "<h4>Instructions</h4>Change the <code>0</code> so that difference will equal <code>12</code>."
       ],
       "tests": [
-        "assert((function(){if(difference === 12 && editor.getValue().match(/\\-/g)){return true;}else{return false;}})(), 'message: Make the variable <code>difference</code> equal 12.');"
+        "assert(difference === 12, 'message: Make the variable <code>difference</code> equal 12.');",
+        "assert(/-/.test(editor.getValue()),'message: User the <code>-</code> operator');"
       ],
       "challengeSeed": [
         "var difference = 45 - 0;",
         "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(z){return 'difference='+z;})(difference);"
       ],
       "type": "waypoint",
@@ -278,17 +301,19 @@
       "description": [
         "We can also multiply one number by another.",
         "JavaScript uses the <code>*</code> symbol for multiplication.",
-        "Change the <code>0</code> so that product will equal <code>80</code>."
+        "<h4>Instructions</h4>Change the <code>0</code> so that product will equal <code>80</code>."
       ],
       "tests": [
-        "assert((function(){if(product === 80 && editor.getValue().match(/\\*/g)){return true;}else{return false;}})(), 'message: Make the variable <code>product</code> equal 80.');"
+        "assert(product === 80,'message: Make the variable <code>product</code> equal 80');",
+        "assert(/\\*/.test(editor.getValue()), 'message: Use the <code>*</code> operator');"
       ],
       "challengeSeed": [
         "var product = 8 * 0;",
         "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return 'product='+z;})(product);"
+        ""
+      ],
+      "tail": [
+        "(function(z){return 'product = '+z;})(product);"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -299,17 +324,19 @@
       "description": [
         "We can also divide one number by another.",
         "JavaScript uses the <code>/</code> symbol for division.",
-        "Change the <code>0</code> so that quotient will equal <code>2</code>."
+        "<h4>Instructions</h4>Change the <code>0</code> so that quotient will equal <code>2</code>."
       ],
       "tests": [
-        "assert((function(){if(quotient === 2 && editor.getValue().match(/var\\s*?quotient\\s*?\\=\\s*?\\d+\\s*?\\/\\s*?\\d+\\s*?;/g)){return true;}else{return false;}})(), 'message: Make the variable <code>quotient</code> equal 2.');"
+        "assert(quotient === 2, 'message: Make the variable <code>quotient</code> equal 2.');",
+        "assert(/\\d+\\s*\\/\\s*\\d+/.test(editor.getValue()), 'message: Use the <code>/</code> operator');"
       ],
       "challengeSeed": [
         "var quotient = 66 / 0;",
         "",
-        "// Only change code above this line.",
-        "",
-        "(function(z){return 'quotient='+z;})(quotient);"
+        ""
+      ],
+      "tail": [
+        "(function(z){return 'quotient = '+z;})(quotient);"
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -318,19 +345,31 @@
       "id": "56533eb9ac21ba0edf2244ac",
       "title": "Increment a Number with Javascript",
       "description": [
-        "++"
+        "You can easily <dfn>increment</dfn> or add one to a Javascript variable with the <code>++</code> operator.",
+        "<code>i++;</code>",
+        "is the equivilent of",
+        "<code>i = i + 1;</code>",
+        "<h4>Instructions</h4>Change the code to use the <code>++</code> operator on <code>myVar</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(myVar === 88, 'message: <code>myVar</code> should equal <code>88</code>');",
+        "assert(/[+]{2}/.test(editor.getValue()), 'message: Use the <code>++</code> operator');",
+        "assert(/var myVar = 87;/.test(editor.getValue()), 'message: Do not change code above the line');"
       ],
       "challengeSeed": [
+        "var myVar = 87;",
         "",
-        "",
+        "// Only change code below this line",
+        "myVar = myVar + 1;",
         ""
       ],
+      "tail": [
+        "(function(z){return 'myVar = ' + z;})(myVar);"
+      ],
       "solutions": [
-        ""
+        "var myVar = 87;",
+        "myVar++;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -344,19 +383,31 @@
       "id": "56533eb9ac21ba0edf2244ad",
       "title": "Decrement a Number with Javascript",
       "description": [
-        "--"
+        "You can easily <dfn>decrement</dfn> or decrease by one a Javascript variable with the <code>--</code> operator.",
+        "<code>i--;</code>",
+        "is the equivilent of",
+        "<code>i = i - 1;</code>",
+        "<h4>Instructions</h4>Change the code to use the <code>--</code> operator on <code>myVar</code>"
       ],
       "releasedOn": "11/27/2015",
       "tests": [
-        "assert(1===1, 'message: message here');"
+        "assert(myVar === 10, 'message: <code>myVar</code> should equal <code>10</code>');",
+        "assert(/myVar[-]{2}/.test(editor.getValue()), 'message: Use the <code>--</code> operator on <code>myVar</code>');",
+        "assert(/var myVar = 11;/.test(editor.getValue()), 'message: Do not change code above the line');"
       ],
       "challengeSeed": [
+        "var myVar = 11;",
         "",
-        "",
+        "// Only change code below this line",
+        "myVar = myVar - 1;",
         ""
       ],
+      "tail": [
+        "(function(z){return 'myVar = ' + z;})(myVar);"
+      ],
       "solutions": [
-        ""
+        "var myVar = 87;",
+        "myVar--;"
       ],
       "type": "waypoint",
       "challengeType": "1",
@@ -379,9 +430,9 @@
       "challengeSeed": [
         "var ourDecimal = 5.7;",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(){if(typeof(myDecimal) !== \"undefined\"){return myDecimal;}})();"
       ],
       "type": "waypoint",
@@ -422,9 +473,9 @@
       "challengeSeed": [
         "var quotient = 0.0 / 2.0;",
         "",
-        "",
-        "// Only change code above this line.",
-        "",
+        ""
+      ],
+      "tail": [
         "(function(y){return 'quotient='+y;})(quotient);"
       ],
       "type": "waypoint",
@@ -444,6 +495,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -472,6 +526,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -498,6 +555,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -526,6 +586,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -553,6 +616,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -578,6 +644,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -610,6 +679,9 @@
         "",
         "if(typeof(myFirstName) !== \"undefined\" && typeof(myLastName) !== \"undefined\"){(function(){return myFirstName + ', ' + myLastName;})();}"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -629,6 +701,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -658,6 +733,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -683,6 +761,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -710,6 +791,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -739,6 +823,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -765,6 +852,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -793,6 +883,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -836,6 +929,9 @@
         "",
         "if(typeof(lastNameLength) !== \"undefined\"){(function(){return lastNameLength;})();}"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -869,6 +965,9 @@
         "",
         "(function(v){return v;})(firstLetterOfLastName);"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -886,6 +985,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -924,6 +1026,9 @@
         "",
         "(function(v){return v;})(thirdLetterOfLastName);"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -953,6 +1058,9 @@
         "// Only change code above this line.",
         "",
         "(function(v){return v;})(lastLetterOfLastName);"
+      ],
+      "tail": [
+
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -984,6 +1092,9 @@
         "",
         "(function(v){return v;})(secondToLastLetterOfLastName);"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1001,6 +1112,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1038,6 +1152,9 @@
         "",
         "(function(z){return z;})(myArray);"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1061,6 +1178,9 @@
         "// Only change code above this line.",
         "",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
+      ],
+      "tail": [
+
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1126,6 +1246,9 @@
         "",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1158,6 +1281,9 @@
         "",
         "(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1189,6 +1315,9 @@
         "",
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1219,6 +1348,9 @@
         "",
         "",
         "(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);"
+      ],
+      "tail": [
+
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -1253,6 +1385,9 @@
         "",
         "(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1270,6 +1405,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1319,6 +1457,9 @@
         "(function(){return f;})();",
         "}"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1336,6 +1477,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1363,6 +1507,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -1388,6 +1535,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1415,6 +1565,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -1440,6 +1593,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1493,6 +1649,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -1518,6 +1677,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1545,6 +1707,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -1570,6 +1735,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1627,6 +1795,9 @@
         "",
         "(function(z){return z;})(myDog);"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1644,6 +1815,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1671,6 +1845,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -1696,6 +1873,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1795,6 +1975,9 @@
         "",
         "(function(z){return z;})(myDog);"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1836,6 +2019,9 @@
         "",
         "(function(z){return z;})(myDog);"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -1853,6 +2039,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1880,6 +2069,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -1905,6 +2097,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -1932,6 +2127,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -1958,6 +2156,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -1983,6 +2184,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -2032,6 +2236,9 @@
         "",
         "var result = myFunction();if(typeof(flip) !== \"undefined\" && typeof(flip) === \"number\" && typeof(result) !== \"undefined\" && typeof(result) === \"string\"){(function(y,z){return 'flip = ' + y.toString() + ', text = ' + z;})(flip, result);}"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -2049,6 +2256,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -2076,6 +2286,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -2101,6 +2314,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -2128,6 +2344,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -2153,6 +2372,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -2180,6 +2402,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -2206,6 +2431,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -2231,6 +2459,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -2261,6 +2492,9 @@
       "solutions": [
         ""
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1",
       "nameCn": "",
@@ -2283,6 +2517,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -2310,6 +2547,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -2335,6 +2575,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -2362,6 +2605,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -2387,6 +2633,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -2414,6 +2663,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -2440,6 +2692,9 @@
         "",
         ""
       ],
+      "tail": [
+
+      ],
       "solutions": [
         ""
       ],
@@ -2465,6 +2720,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -2518,6 +2776,9 @@
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -2556,6 +2817,9 @@
         "",
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
+      ],
+      "tail": [
+
       ],
       "type": "waypoint",
       "challengeType": "1"
@@ -2656,6 +2920,9 @@
         "if(typeof(myArray) !== \"undefined\"){(function(){return myArray;})();}",
         ""
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -2685,6 +2952,9 @@
         "",
         "(function(){return myFunction();})();"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -2702,6 +2972,9 @@
         "",
         "",
         ""
+      ],
+      "tail": [
+
       ],
       "solutions": [
         ""
@@ -2798,6 +3071,9 @@
         "",
         "(function(){return myFunction();})();"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -2833,6 +3109,9 @@
         "  return testString.match(expression).length;",
         "})();(function(){return test;})();"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -2865,6 +3144,9 @@
         "",
         "})();(function(){return test;})();"
       ],
+      "tail": [
+
+      ],
       "type": "waypoint",
       "challengeType": "1"
     },
@@ -2895,6 +3177,9 @@
         "  return testString.match(expression).length;",
         "",
         "})();(function(){return test;})();"
+      ],
+      "tail": [
+
       ],
       "type": "waypoint",
       "challengeType": "1"
